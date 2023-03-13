@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions Légale{% endblock %}
+
+{% block body %}
+    <section class="container privacy-font mt-5">
+        <h1 class="text-center">Mentions légale</h1>
+{% set order = 0 %}
+        {% for mention in mentions %}
+            {% set order = order + 1  %}
+            <h2 class="privacy-title">Article {{ order }} – {{ mention.title }}</h2>
+            <div class="privacy-content">
+                {{ mention.content|raw }}
+            </div>
+        {% endfor %}
+        <a href="{{ path('app_home') }}">Retour à la page d'accueil</a>
+    </section>
+{% endblock %}

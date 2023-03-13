@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}politique de confidentialite{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 privacy-font">
+        <h1 class="text-dark fw-bolder text-center">Politique de confidentialité</h1>
+
+        <p class="fw-bolder">
+            J’accorde une importance toute particulière au droit à la vie privée des internautes et m’engage à protéger leurs données personnelles selon la législation française et européenne en vigueur.
+        </p>
+        <p class="privacy-content">
+            La présente politique de confidentialité, désignée ci-après la « Politique expose mes pratiques concernant les informations que je peux collecter sur ce Site et leur utilisation.
+        </p>
+        <ul class="list m-0 p-0">
+            <li class="list-item">
+                <h2 class="privacy-title">Identité du responsable de traitement</h2>
+                <ul class="list">
+
+                    <li class="list-item privacy-content">
+                        Benoit Menier
+                    </li>
+                    <li class="list-item privacy-content">
+                        Mail : contact@benoitmenier.fr
+                    </li>
+                </ul>
+            </li>
+            {% for privacy in privacies %}
+                <li class="list-item mt-3">
+                    <h2 class="privacy-title">{{ privacy.title }}</h2>
+
+                    <div class="privacy-content">{{ privacy.content|raw }}</div>
+                </li>
+            {% endfor %}
+
+        </ul>
+        <a href="{{ path('app_home') }}">Retour à la page d'accueil</a>
+    </div>
+
+{% endblock %}
