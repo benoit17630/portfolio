@@ -17,11 +17,11 @@ class AppFixtures extends Fixture
     {
        $admin = new User();
        $admin
-           ->setEmail("contact@benoitmenier.fr")
+           ->setEmail("test@test.fr")
            ->setCgu(true)
            ->setCreatedAt(new \DateTimeImmutable())
            ->setRoles(['ROLE_ADMIN'])
-           ->setPassword($this->passwordHasher->hashPassword($admin, 'Noirot@1718'))
+           ->setPassword($this->passwordHasher->hashPassword($admin, 'test'))
        ;
 
         $manager->flush();
