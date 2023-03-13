@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\About;
+use App\Entity\Contact\Contact;
 use App\Entity\Rgbd\LegalMention;
 use App\Entity\Rgbd\privacyPolicy;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -34,6 +36,7 @@ class DashboardController extends AbstractDashboardController
                 MenuItem::linkToCrud('Privacy Policy', '', privacyPolicy::class),
                 MenuItem::linkToCrud('Legal mention', '', LegalMention::class)
             ]);
-
+        yield MenuItem::linkToCrud('about', '', About::class);
+        yield MenuItem::linkToCrud("Contact", '', Contact::class);
     }
 }

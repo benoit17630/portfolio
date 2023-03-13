@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <!-- WELCOME -->
+    <section class="py-10 py-md-14 overlay overlay-black overlay-60 bg-cover"
+             style="background-image: url({{ asset('asset/img/covers/cover-11.jpg') }});">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center">
+
+                    <!-- Heading -->
+                    <h1 class="display-2 fw-bold text-white">
+                        Benoit Menier
+                    </h1>
+
+                    <!-- Text -->
+                    <p class="lead text-white-75 mb-0">
+                        Développeur web junior - Intégrateur
+                    </p>
+
+                </div>
+            </div> <!-- / .row -->
+        </div> <!-- / .container -->
+    </section>
+    <!-- SHAPE -->
+    <div class="position-relative">
+        <div class="shape shape-bottom shape-fluid-x text-light">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>      </div>
+    </div>
+
+    <!-- FORM -->
+    <section class="pt-8 pt-md-11 pb-8 pb-md-14">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8 text-center">
+
+                    <!-- Heading -->
+                    <h2 class="fw-bold">
+                        Contact
+                    </h2>
+
+                    <!-- Text -->
+                    <p class="fs-lg text-muted mb-7 mb-md-9">
+                        Vous souhaitez travailler sur un projet ? Ou tout simplement parler de sujets relatifs au développement web ?
+                    </p>
+
+                </div>
+            </div> <!-- / .row -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12 col-lg-10">
+
+                    <!-- Form -->
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            {{ form_row(form.fullname) }}
+                        </div>
+                        <div class="col-12 col-md-6">
+                            {{ form_row(form.email) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            {{ form_row(form.title) }}
+                        </div>
+                        <div class="col-12">
+                            {{ form_row(form.message) }}
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-auto">
+                            {{ form_row(form.submit) }}
+                        </div>
+
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
